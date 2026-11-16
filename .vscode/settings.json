@@ -1,0 +1,9 @@
+{
+    "notebook.editorOptionsCustomizations": {
+        "editor.wordWrap": "on"
+    },
+    "notebook.output.wordWrap": true,
+    "[python]": {
+        "editor.wordWrap": "on"
+    }
+}

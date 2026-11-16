@@ -2,9 +2,12 @@ version = 1
 revision = 5
 requires-python = ">=3.14"
 resolution-markers = [
-    "sys_platform == 'win32'",
-    "sys_platform == 'emscripten'",
-    "sys_platform != 'emscripten' and sys_platform != 'win32'",
+    "python_full_version >= '3.15' and sys_platform == 'win32'",
+    "python_full_version >= '3.15' and sys_platform == 'emscripten'",
+    "python_full_version >= '3.15' and sys_platform != 'emscripten' and sys_platform != 'win32'",
+    "python_full_version < '3.15' and sys_platform == 'win32'",
+    "python_full_version < '3.15' and sys_platform == 'emscripten'",
+    "python_full_version < '3.15' and sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 
 [[package]]
@@ -14,6 +17,25 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz", hash = "sha256:13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7", size = 15893, upload-time = "2026-07-23T20:16:13.995Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl", hash = "sha256:f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0", size = 13427, upload-time = "2026-07-23T20:16:12.938Z" },
+]
+
+[[package]]
+name = "anthropic"
+version = "2.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "docstring-parser" },
+    { name = "httpx2" },
+    { name = "jiter" },
+    { name = "opentelemetry-api" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/75/e6/aabc3c266a0aaf38fa542648585741fce9616ba4cd034ddde74548f790a0/anthropic-2.8.0.tar.gz", hash = "sha256:d34e389ba0544cd64e033eb7475f46cc1ac6f2a388cdcd472b33ad4ac29ef40c", size = 1976933, upload-time = "2026-11-10T16:33:19.38Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/96/8e/f8ef271dcbe3b187879b660c129ee36ef655c7b878f6878460891d9b2a26/anthropic-2.8.0-py3-none-any.whl", hash = "sha256:76ad332e2d500fc54d0112cf100544ad1a7605e71e092b98d9eb664d2b66e283", size = 2456925, upload-time = "2026-11-10T16:33:21.388Z" },
 ]
 
 [[package]]
@@ -387,6 +409,15 @@ wheels = [
 ]
 
 [[package]]
+name = "docstring-parser"
+version = "0.18.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz", hash = "sha256:292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015", size = 29341, upload-time = "2026-04-14T04:09:19.867Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a7/5f/ed01f9a3cdffbd5a008556fc7b2a08ddb1cc6ace7effa7340604b1d16699/docstring_parser-0.18.0-py3-none-any.whl", hash = "sha256:b3fcbed555c47d8479be0796ef7e19c2670d428d72e96da63f3a40122860374b", size = 22484, upload-time = "2026-04-14T04:09:18.638Z" },
+]
+
+[[package]]
 name = "executing"
 version = "2.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -411,6 +442,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/02/01/248d44fbda9e78fa1a7b5a475194bef4c4a3e285db286419f3bb42f2efdf/fqdn-1.6.0.tar.gz", hash = "sha256:e39bf62e2a9481aa2cb780554fdfd944dd8ee5f230eb831684d539cbafed8de2", size = 130737, upload-time = "2026-09-28T05:43:35.482Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/15/d5/a8f9149b97cced9e1f4bff92ff0b6206120e2c853ae774d7020d6ecd8fa8/fqdn-1.6.0-py3-none-any.whl", hash = "sha256:6c793c312ccfa29981e1135b3ef5e1277ebe639731a6b0f7350d90e96e63f0b4", size = 12569, upload-time = "2026-09-28T05:43:33.951Z" },
+]
+
+[[package]]
+name = "genai-prices"
+version = "0.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx2" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1d/ce/7b18aeb714493736513bffd919414551324cb73f0a4ac8d6f5ddc2373e6d/genai_prices-0.2.3.tar.gz", hash = "sha256:cdee9b0b2e44b1323c477ebe3c84e44ddbcdd1a3feb0ebce5bb2af1bc667d900", size = 163971, upload-time = "2026-11-10T21:51:42.828Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8e/e8/a8773a718b763c608dbbebec2124e6de873798f10bf3eaaf31e1e2810368/genai_prices-0.2.3-py3-none-any.whl", hash = "sha256:56976ce2b04ec206117f7d0e53f4849211a6724ab3a12119afec304eba63ee25", size = 173490, upload-time = "2026-11-10T21:51:41.625Z" },
 ]
 
 [[package]]
@@ -970,6 +1014,7 @@ dependencies = [
     { name = "python-dotenv" },
     { name = "requests" },
     { name = "sqlitesearch" },
+    { name = "toyaikit" },
 ]
 
 [package.metadata]
@@ -980,6 +1025,7 @@ requires-dist = [
     { name = "python-dotenv", specifier = ">=1.2.4" },
     { name = "requests", specifier = ">=2.34.2" },
     { name = "sqlitesearch", specifier = ">=0.3.0" },
+    { name = "toyaikit", specifier = ">=0.0.11" },
 ]
 
 [[package]]
@@ -1314,6 +1360,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/8f/adc3e9f7077c16a2417eebb219df2f5933f4fa532fab143c6bbb1c287c67/openai-3.49.0.tar.gz", hash = "sha256:44badf2bea9bcd643dafa0bc4d5a109a14395889219fd68b8560322288196e96", size = 2410883, upload-time = "2026-11-10T06:47:55.206Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fe/45/de8fbd25a1ca0a46f9641604a7cb991123daa7f292c27625223d685d9bac/openai-3.49.0-py3-none-any.whl", hash = "sha256:3977754792115027ba80ae16996ba3366478b5b228e1ab58e2660bd7ac8c3d78", size = 2442112, upload-time = "2026-11-10T06:47:52.422Z" },
+]
+
+[[package]]
+name = "opentelemetry-api"
+version = "1.45.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/19/14/cf3a6b6448849656e1e5f4e2101f3988dc6789724050096aba1bc5ccf592/opentelemetry_api-1.45.2.tar.gz", hash = "sha256:d7b0008e21e5fd61cbe7a7f34ca3b6905a78ab677d9bc395e299359c75cda6b4", size = 73277, upload-time = "2026-10-29T17:29:37.888Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a9/2d/610db864d7513158cebb8f36cc88e67e73bd6c7aa1905ef18d89e1281c81/opentelemetry_api-1.45.2-py3-none-any.whl", hash = "sha256:2cbd737377e710ee740d261c94e93fa0f08e6d037c18f17513cc0a2d94479a34", size = 60335, upload-time = "2026-10-29T17:29:06.955Z" },
 ]
 
 [[package]]
@@ -2065,6 +2123,22 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/3b/d4/13973391071552e03acb308d93f6deb4fb535a769a6bbdafdb4cafcb2f91/tornado-6.6.1-cp315-cp315t-win32.whl", hash = "sha256:2fbfd2510b6163b189773155a8246c025cb260ccc7cd12ad18c36c54f5617bb9", size = 535422, upload-time = "2026-11-09T21:09:18.525Z" },
     { url = "https://files.pythonhosted.org/packages/19/94/c952b625904b63fdac5b747f2eeaca64ab5d36cdb8faff57effa57162d87/tornado-6.6.1-cp315-cp315t-win_amd64.whl", hash = "sha256:3c35091add5863feb9cf651851bb1b23592f1f9551b5dfed72837c83ea4e5b85", size = 535713, upload-time = "2026-11-09T21:09:20.061Z" },
     { url = "https://files.pythonhosted.org/packages/f8/62/8d0c0c42f3346f3f2455738d3bc689bbd8efba38abf7b90ab2b8294eae83/tornado-6.6.1-cp315-cp315t-win_arm64.whl", hash = "sha256:065bc741478b168df9baf754956a3010c04d1330bb45a84833d807c29e11b257", size = 535719, upload-time = "2026-11-09T21:09:21.317Z" },
+]
+
+[[package]]
+name = "toyaikit"
+version = "0.0.11"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anthropic" },
+    { name = "genai-prices" },
+    { name = "ipython" },
+    { name = "mistune" },
+    { name = "openai" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f1/dc/c86b0c09018db45aa9a8ea8a8a3cd7d3a4101a6cabc86262ff4c550ddfd7/toyaikit-0.0.11.tar.gz", hash = "sha256:792fc7c0c4e6e7e4ffb3535b57d57c6cd1252c02b8782abb6527e52751f2cf22", size = 207449, upload-time = "2026-05-24T13:39:47.453Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1c/2e/0e37b9ae31e2c75264673049818e7244c3990104da59cfd62a49af3d625f/toyaikit-0.0.11-py3-none-any.whl", hash = "sha256:4521f70150fb16cef864487b7d211936dbb0c864b29e70d17427c711e2a7de24", size = 24113, upload-time = "2026-05-24T13:39:46.177Z" },
 ]
 
 [[package]]
